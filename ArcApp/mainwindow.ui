@@ -114,7 +114,7 @@ QWidget#wdg_transTotal {
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>11</number>
     </property>
     <widget class="QWidget" name="mainMenu">
      <layout class="QGridLayout" name="gridLayout_5">
@@ -4206,7 +4206,7 @@ QWidget#wdg_transTotal {
                    <string>Checking-out</string>
                   </attribute>
                   <layout class="QGridLayout" name="gridLayout_36">
-                   <item row="0" column="0">
+                   <item row="0" column="1">
                     <widget class="QTableWidget" name="checkout_tableWidget">
                      <column>
                       <property name="text">
@@ -4249,6 +4249,9 @@ QWidget#wdg_transTotal {
                       </property>
                      </column>
                     </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QTableView" name="checkout_tableView"/>
                    </item>
                   </layout>
                  </widget>

@@ -171,24 +171,22 @@ void MainWindow::on_actionTest_Query_triggered()
     // {
     //     qDebug() << fieldList.at(i);
     // }
-    QSqlQuery query;
-    if (dbManager->getCheckoutQuery(&query, QDate::currentDate()))
-    {
-        int numCols = query.record().count();
 
-        int numRows = 0;
-        QStringList *data = new QStringList();
-        while (query.next()) {
-            numRows++;
-            for (int i = 0; i < numCols; ++i)
-            {
-                *data << query.value(i).toString();           
-            }
-        }
-        MyModel* model = new MyModel(this, data, numRows, numCols);
-        ui->checkout_tableView->setModel(model);
-        ui->checkout_tableView->show();
-    }
+    QList<QStringList>* data = new QList<QStringList>();
+    *data << (QStringList() << "11" << "12")
+          << (QStringList() << "21" << "22");
+
+    
+
+//    QString data[2][2] =
+//    {
+//        {"11", "12"},
+//        {"21", "22"}
+//    };
+
+    Model* model= new model(this, data, 2, 2);
+    ui->checkout_tableView->setModel(model);
+    ui->checkout_tableView->show();
 }
 
 void MainWindow::on_actionFile_Upload_triggered()

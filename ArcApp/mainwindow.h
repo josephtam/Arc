@@ -29,6 +29,9 @@
 #include "transaction.h"
 #include "client.h"
 #include "shared.h"
+#include "mymodel.h"
+#include <vector>
+
 namespace Ui {
 class MainWindow;
 }
