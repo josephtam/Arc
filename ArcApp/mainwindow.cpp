@@ -23,6 +23,10 @@ MainWindow::MainWindow(QWidget *parent) :
     //default signal of stackedWidget
     //detect if the widget is changed
     connect(ui->stackedWidget, SIGNAL(currentChanged(int)), this, SLOT(initCurrentWidget(int)));
+    connect(this, SIGNAL(test()), this, SLOT(updateCheckoutView()), Qt::QueuedConnection);
+    connect(this, SIGNAL(test()), this, SLOT(updateVacancyView()), Qt::QueuedConnection);
+    connect(this, SIGNAL(test()), this, SLOT(updateLunchView()), Qt::QueuedConnection);
+    connect(this, SIGNAL(test()), this, SLOT(updateWakeupView()), Qt::QueuedConnection);
 }
 
 MainWindow::~MainWindow()
@@ -589,11 +593,12 @@ void MainWindow::on_button_cancel_client_register_clicked()
 
 void MainWindow::on_reportsButton_clicked()
 {
-    MainWindow::updateCheckoutView();
-    MainWindow::updateVacancyView();
-    MainWindow::updateLunchView();
-    MainWindow::updateWakeupView();
+//    MainWindow::updateCheckoutView();
+//    MainWindow::updateVacancyView();
+//    MainWindow::updateLunchView();
+//    MainWindow::updateWakeupView();
     ui->stackedWidget->setCurrentIndex(11);
+    emit test();
 }
 
 /*===================================================================

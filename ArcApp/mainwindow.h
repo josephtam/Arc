@@ -201,6 +201,9 @@ private slots:
 
     void on_tableWidget_3_doubleClicked(const QModelIndex &index);
 
+signals:
+    void test();
+
 private:
     Ui::MainWindow *ui;
     MainWindow * mw;
